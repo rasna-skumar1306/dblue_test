@@ -40,7 +40,7 @@ function App() {
 								<ViewContactComponent />
 							</Route>
 							<Route path="/user/:uid">
-								<ChatComponent />
+								<ChatComponent contacts={contacts} />
 							</Route>
 						</Switch>
 					</Content>

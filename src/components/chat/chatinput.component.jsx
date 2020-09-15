@@ -5,12 +5,14 @@ import { useSelector } from "react-redux";
 import firebase, { firestore } from "../../firebase";
 import { SendOutlined } from "@ant-design/icons";
 
-const ChatInput = ({ chatid }) => {
+const ChatInput = ({ chatid, contacts }) => {
 	const [message, setMessage] = useState("");
 	const [chatRef] = useState(firestore.collection("contacts"));
 	const user = useSelector((state) => state.currentUser);
 	const avatar = user.slice(0, 2).toUpperCase();
 
+	let sender = contacts.filter((contact) => contact.name === user);
+	console.log(sender[0]?.id);
 	const sendMessage = (e) => {
 		e.preventDefault();
 		if (chatid) {
@@ -20,6 +22,13 @@ const ChatInput = ({ chatid }) => {
 				user: user,
 				avatarName: avatar,
 			});
+			chatRef.doc(sender[0]?.id).collection("messages").add({
+				message: message,
+				timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+				user: user,
+				avatarName: avatar,
+			});
+
 			setMessage("");
 		}
 	};

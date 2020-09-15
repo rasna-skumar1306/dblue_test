@@ -9,7 +9,7 @@ import ChatInput from "./chatinput.component";
 
 const { Header, Content } = Layout;
 
-const ChatComponent = () => {
+const ChatComponent = ({ contacts }) => {
 	const { uid } = useParams();
 	const [chatRef] = useState(firestore.collection("contacts"));
 	const [chatDetails, setChatDetails] = useState(null);
@@ -48,7 +48,7 @@ const ChatComponent = () => {
 						key={timestamp}
 					/>
 				))}
-				<ChatInput chatid={uid} />
+				<ChatInput chatid={uid} contacts={contacts} />
 			</Content>
 		</div>
 	);
