@@ -1,0 +1,25 @@
+.contactlist {
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	grid-template-columns: 1fr 1fr 1fr;
+	background: #00c9ff; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#92fe9d,
+		#00c9ff
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #92fe9d, #00c9ff);
+}
+
+@media screen and (max-width: 1350px) {
+	.contactlist {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.contactlist {
+		grid-template-columns: 1fr;
+	}
+}

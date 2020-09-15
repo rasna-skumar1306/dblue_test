@@ -1,0 +1,43 @@
+.contactform {
+	display: grid;
+	justify-content: center;
+	background: #00c9ff; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#92fe9d,
+		#00c9ff
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#92fe9d,
+		#00c9ff
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.ant-input-affix-wrapper.ant-input-affix-wrapper-lg.contact__formInput {
+	margin-top: 3rem;
+	width: 26rem;
+	border: 1px solid rgb(0, 0, 0);
+}
+
+.ant-btn.contact__formButton {
+	margin: auto;
+	margin-top: 3rem;
+	margin-bottom: 20rem;
+	height: 3rem;
+	width: 13rem;
+	background-color: #9cfca5e0;
+	border: 2px solid rgb(0, 0, 0);
+	font-weight: 700;
+}
+
+@media screen and (max-width: 900px) {
+	.ant-input-affix-wrapper.ant-input-affix-wrapper-lg.contact__formInput {
+		width: 24rem;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.ant-input-affix-wrapper.ant-input-affix-wrapper-lg.contact__formInput {
+		width: 16rem;
+	}
+}
